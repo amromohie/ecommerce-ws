@@ -1,35 +1,84 @@
-<!-- Header/Navbar -->
-<header class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+<header class="navbar bg-base-100/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-base-300">
   <div class="navbar-start">
+    <!-- Mobile Menu -->
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle lg:hidden hover:bg-primary/10">
         <fa-icon [icon]="['fas', 'bars']"></fa-icon>
       </div>
-      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>{{ 'navigation.home' | translate }}</a></li>
-        <li><a>{{ 'navigation.products' | translate }}</a></li>
-        <li><a>{{ 'navigation.about' | translate }}</a></li>
-        <li><a>{{ 'navigation.contact' | translate }}</a></li>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-base-100 rounded-box w-52 border border-base-300">
+        <li><a class="hover:bg-primary/10">{{ 'navigation.home' | translate }}</a></li>
+        <li><a class="hover:bg-primary/10">{{ 'navigation.products' | translate }}</a></li>
+        <li><a class="hover:bg-primary/10">{{ 'navigation.about' | translate }}</a></li>
+        <li><a class="hover:bg-primary/10">{{ 'navigation.contact' | translate }}</a></li>
       </ul>
     </div>
-    <a class="btn btn-ghost text-xl font-bold">Ec</a>
+    
+    <!-- Logo -->
+    <a class="btn btn-ghost text-xl font-bold hover:bg-primary/10 transition-colors">
+      <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Ec</span>
+    </a>
   </div>
 
+  <!-- Desktop Menu -->
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>{{ 'navigation.home' | translate }}</a></li>
-      <li><a>{{ 'navigation.products' | translate }}</a></li>
-      <li><a>{{ 'navigation.about' | translate }}</a></li>
-      <li><a>{{ 'navigation.contact' | translate }}</a></li>
+    <ul class="menu menu-horizontal px-1 gap-1">
+      <li><a class="hover:bg-primary/10 transition-all duration-200">{{ 'navigation.home' | translate }}</a></li>
+      <li><a class="hover:bg-primary/10 transition-all duration-200">{{ 'navigation.products' | translate }}</a></li>
+      <li><a class="hover:bg-primary/10 transition-all duration-200">{{ 'navigation.about' | translate }}</a></li>
+      <li><a class="hover:bg-primary/10 transition-all duration-200">{{ 'navigation.contact' | translate }}</a></li>
     </ul>
   </div>
 
   <div class="navbar-end gap-2">
-    <!-- Cart -->
-    <button class="btn btn-ghost btn-circle">
+    <!-- Theme Switcher with Animation -->
+    <button 
+      class="btn btn-ghost btn-circle hover:bg-primary/10 hover:rotate-180 transition-all duration-300" 
+      (click)="toggleTheme()" 
+      [attr.aria-label]="'theme.toggle' | translate">
+      <fa-icon 
+        [icon]="getCurrentTheme() === 'dark' ? ['fas', 'sun'] : ['fas', 'moon']"
+        class="text-lg">
+      </fa-icon>
+    </button>
+    
+    <!-- Language Switcher with Modern Dropdown -->
+    <div class="dropdown dropdown-end">
+      <div 
+        tabindex="0" 
+        role="button" 
+        class="btn btn-ghost btn-circle hover:bg-primary/10 transition-colors" 
+        [attr.aria-label]="'language.switch' | translate">
+        <fa-icon [icon]="['fas', 'language']" class="text-lg"></fa-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-xl bg-base-100 rounded-box w-40 border border-base-300 mt-3">
+        <li>
+          <a 
+            (click)="switchLanguage('en')" 
+            [class.bg-primary]="getCurrentLanguage() === 'en'"
+            [class.text-primary-content]="getCurrentLanguage() === 'en'"
+            class="hover:bg-primary/10 transition-colors flex items-center gap-2">
+            <fa-icon [icon]="['fas', 'globe']" class="text-sm"></fa-icon>
+            <span class="font-medium">English</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            (click)="switchLanguage('ar')" 
+            [class.bg-primary]="getCurrentLanguage() === 'ar'"
+            [class.text-primary-content]="getCurrentLanguage() === 'ar'"
+            class="hover:bg-primary/10 transition-colors flex items-center gap-2">
+            <fa-icon [icon]="['fas', 'globe']" class="text-sm"></fa-icon>
+            <span class="font-medium">العربية</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Cart with Badge Animation -->
+    <button class="btn btn-ghost btn-circle hover:bg-primary/10 transition-colors relative">
       <div class="indicator">
-        <fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon>
-        <span class="badge badge-sm indicator-item">3</span>
+        <fa-icon [icon]="['fas', 'cart-shopping']" class="text-lg"></fa-icon>
+        <span class="badge badge-sm badge-primary indicator-item animate-pulse">3</span>
       </div>
     </button>
   </div>
