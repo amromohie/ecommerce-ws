@@ -1,0 +1,41 @@
+{
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Welcome to Our Store",
+    "subtitle": "Discover amazing products at unbeatable prices",
+    "cta": "Shop Now"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "shipping": {
+      "title": "Fast Shipping",
+      "description": "Free shipping on orders over $50"
+    },
+    "payment": {
+      "title": "Secure Payment",
+      "description": "Your payment information is safe with us"
+    },
+    "quality": {
+      "title": "Quality Products",
+      "description": "Only the best products for our customers"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "We're here to help you anytime"
+    }
+  },
+  "products": {
+    "title": "Featured Products",
+    "addToCart": "Add to Cart"
+  },
+  "footer": {
+    "about": "Your trusted partner for quality products and exceptional service.",
+    "contact": "Contact Us",
+    "copyright": "© 2024 Your Store. All rights reserved."
+  }
+}

@@ -1,0 +1,29 @@
+<!-- Footer -->
+<footer class="footer footer-center p-10 bg-base-200 text-base-content">
+  <aside>
+    <h3 class="text-2xl font-bold">Ec</h3>
+    <p class="max-w-md">{{ 'footer.about' | translate }}</p>
+  </aside>
+  <nav>
+    <div class="grid grid-flow-col gap-4">
+      <a class="link link-hover">{{ 'footer.about' | translate }}</a>
+      <a class="link link-hover">{{ 'footer.contact' | translate }}</a>
+    </div>
+  </nav>
+  <nav>
+    <div class="grid grid-flow-col gap-4">
+      <a class="text-2xl">
+        <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+      </a>
+      <a class="text-2xl">
+        <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+      </a>
+      <a class="text-2xl">
+        <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
+      </a>
+    </div>
+  </nav>
+  <aside>
+    <p>{{ 'footer.copyright' | translate }}</p>
+  </aside>
+</footer>

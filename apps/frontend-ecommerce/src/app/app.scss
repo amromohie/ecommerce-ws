@@ -1,0 +1,75 @@
+/* App-specific styles */
+
+/* Theme transition animations */
+.theme-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* RTL-specific component adjustments */
+[dir="rtl"] {
+  .hero-content {
+    @apply text-right;
+  }
+  
+  .card-body {
+    @apply text-right;
+  }
+  
+  .footer {
+    @apply text-right;
+  }
+  
+  /* Reverse flex direction for RTL */
+  .navbar-start,
+  .navbar-end {
+    @apply flex-row-reverse;
+  }
+  
+  /* Adjust dropdown positioning */
+  .dropdown-content {
+    @apply right-0 left-auto;
+  }
+}
+
+/* Language switcher active state */
+.dropdown-content .active {
+  @apply bg-primary text-primary-content;
+}
+
+/* Smooth hover effects */
+.btn {
+  @apply transition-all duration-200;
+}
+
+.card {
+  @apply transition-all duration-200 hover:shadow-2xl;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    @apply text-3xl;
+  }
+  
+  .grid {
+    @apply gap-4;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-base-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-base-content;
+  opacity: 0.2;
+}
